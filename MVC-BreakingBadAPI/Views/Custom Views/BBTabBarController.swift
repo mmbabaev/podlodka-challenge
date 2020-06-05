@@ -45,8 +45,10 @@ class BBTabBarController: UITabBarController {
     }
     
     private func createQuizVC() -> UINavigationController {
-        
-        
+        let quizVC = QuizViewController()
+        quizVC.title = "Quiz"
+        quizVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
+        return UINavigationController(rootViewController: quizVC)
     }
     
     @objc func updateBadge(notification: NSNotification) {
