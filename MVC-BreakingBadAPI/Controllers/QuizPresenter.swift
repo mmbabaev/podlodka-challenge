@@ -11,7 +11,6 @@ import Foundation
 class QuizPresenter {
     
     var characters: [Character] = []
-    
     weak var view: QuizView?
     let service = Characters()
     
@@ -28,8 +27,15 @@ class QuizPresenter {
     }
     
     func loadQuiz() {
-        Quote.getRandomQuote { result in
-            switch result 
+        Quote.getRandomQuote { result  in
+            switch result {
+            case .success(let quote):
+                let rightAnswer = AnswerViewModel(value: quote.author, isCorrect: true)
+                let wrongAnswer = AnswerViewModel(value: self.characters.first(where: { $0.name != quote.author })!.name, isCorrect: false)
+                let viewModel = QuizViewModel(question: "How said that: \(quote.quote)?", image: "", answers: [rightAnswer, wrongAnswer])
+            case .failure:
+                print("error")
+            }
         }
     }
 }

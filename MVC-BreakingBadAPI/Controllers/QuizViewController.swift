@@ -9,8 +9,6 @@
 import UIKit
 
 protocol QuizView: class {
-    
-    func displayCharacters()
     func displayQuiz(viewModel: QuizViewModel)
 }
 
@@ -21,17 +19,22 @@ final class QuizViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
-    @IBOutlet weak var stackView: UIStackView!
-    
+    private var presenter: QuizPresenter!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        presenter = QuizPresenter(view: self)
+        presenter.viewDidLoad()
     }
 }
 
 extension QuizViewController: QuizView {
-    
-    
+    func displayQuiz(viewModel: QuizViewModel) {
+        questionLabel.text = viewModel.question
+        for answers in viewModel.answers {
+            
+        }
+    }
 }

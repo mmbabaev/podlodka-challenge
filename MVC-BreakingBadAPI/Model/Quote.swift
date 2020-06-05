@@ -19,14 +19,9 @@ struct Quote: Codable {
         case author
     }
     
-    static func getRandomQuote(completion: @escaping (Quote?, Error?) -> Void) {
+    static func getRandomQuote(completion: @escaping (Result<Quote, Error>) -> Void) {
         NetworkQuoteManager.getRandomQuote { result in
-            switch result {
-            case .success(let quote):
-                completion(quote.first, nil)
-            case.failure(let error):
-                completion(nil, error)
-            }
+            return result
         }
     }
 }
