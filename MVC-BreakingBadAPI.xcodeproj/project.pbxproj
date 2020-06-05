@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C567566248AA77800C5043B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C567565248AA77800C5043B /* Quote.swift */; };
+		3C567568248AA85200C5043B /* NetworkQuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C567567248AA85200C5043B /* NetworkQuoteManager.swift */; };
 		8ED5D7C6246F311E0097D00E /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D7C5246F311E0097D00E /* SearchRequest.swift */; };
 		A983835385339DF74C8483B1 /* Pods_MVC_BreakingBadAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4756AD9D1C598C73EB96A4 /* Pods_MVC_BreakingBadAPI.framework */; };
 		CA91CCA9244DD69400B3AB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA91CCA8244DD69400B3AB30 /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C567565248AA77800C5043B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		3C567567248AA85200C5043B /* NetworkQuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQuoteManager.swift; sourceTree = "<group>"; };
 		4A4756AD9D1C598C73EB96A4 /* Pods_MVC_BreakingBadAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVC_BreakingBadAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED5D7C5246F311E0097D00E /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		8F03454C5BF32128D2257E6A /* Pods-MVC-BreakingBadAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVC-BreakingBadAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				CAE34EDE246A94E800DEAB16 /* NotificationFavoriteBadge.swift */,
 				CAE34EE0246D730E00DEAB16 /* BBAlert.swift */,
 				8ED5D7C5246F311E0097D00E /* SearchRequest.swift */,
+				3C567565248AA77800C5043B /* Quote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				CAB2B0702466E77C0018D96E /* NetworkCharacterManager.swift */,
 				CAB2B0742466E7CA0018D96E /* NetworkCharactersManager.swift */,
 				CA91CCEC24570D1800B3AB30 /* FavoritePersistenceManager.swift */,
+				3C567567248AA85200C5043B /* NetworkQuoteManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -341,19 +347,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		92A77B80691B4F4BE9697694 /* [CP] Check Pods Manifest.lock */ = {
@@ -389,6 +392,7 @@
 				CA91CCEF2459734000B3AB30 /* UIViewController+Ext.swift in Sources */,
 				CA91CCD3244F1F6F00B3AB30 /* UIView+Ext.swift in Sources */,
 				CA91CCEB24508A3C00B3AB30 /* UITableView+Ext.swift in Sources */,
+				3C567568248AA85200C5043B /* NetworkQuoteManager.swift in Sources */,
 				CA91CCE6245080E100B3AB30 /* UILabel+Ext.swift in Sources */,
 				CA91CCD9244F316400B3AB30 /* Character.swift in Sources */,
 				CA91CCD0244F1BAF00B3AB30 /* Constans.swift in Sources */,
@@ -415,6 +419,7 @@
 				CAE34EF22476CDBC00DEAB16 /* FavoritesView.swift in Sources */,
 				CA91CCF8245C313500B3AB30 /* CustomDataSource.swift in Sources */,
 				CAE34EDF246A94E800DEAB16 /* NotificationFavoriteBadge.swift in Sources */,
+				3C567566248AA77800C5043B /* Quote.swift in Sources */,
 				CAB2B0752466E7CA0018D96E /* NetworkCharactersManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
