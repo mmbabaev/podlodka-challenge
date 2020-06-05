@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol QuizView: class {
+    
+    func displayCharacters()
+    func displayQuiz(viewModel: QuizViewModel)
+}
+
 
 final class QuizViewController: UIViewController {
     
@@ -23,4 +29,9 @@ final class QuizViewController: UIViewController {
         
         
     }
+}
+
+extension QuizViewController: QuizView {
+    
+    
 }
