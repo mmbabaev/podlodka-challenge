@@ -21,7 +21,7 @@ class BBTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [createSearchNC(), createFavoritesNC()]
+        viewControllers = [createSearchNC(), createFavoritesNC(), ]
         UITabBar.appearance().tintColor = .orange
         setFavoritesBadgeValue()
         NotificationFavoriteBadge.addObserver(with: #selector(updateBadge), observer: self)
@@ -42,6 +42,11 @@ class BBTabBarController: UITabBarController {
         favoritiesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
         return UINavigationController(rootViewController: favoritiesVC)
+    }
+    
+    private func createQuizVC() -> UINavigationController {
+        
+        
     }
     
     @objc func updateBadge(notification: NSNotification) {
