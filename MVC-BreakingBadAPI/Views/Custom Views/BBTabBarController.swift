@@ -21,7 +21,7 @@ class BBTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [createSearchNC(), createFavoritesNC(), ]
+        viewControllers = [createSearchNC(), createFavoritesNC(), createQuizVC()]
         UITabBar.appearance().tintColor = .orange
         setFavoritesBadgeValue()
         NotificationFavoriteBadge.addObserver(with: #selector(updateBadge), observer: self)
@@ -45,7 +45,7 @@ class BBTabBarController: UITabBarController {
     }
     
     private func createQuizVC() -> UINavigationController {
-        let quizVC = QuizViewController()
+        let quizVC = UIStoryboard(name: "Quiz", bundle: nil).instantiateInitialViewController()!
         quizVC.title = "Quiz"
         quizVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
         return UINavigationController(rootViewController: quizVC)

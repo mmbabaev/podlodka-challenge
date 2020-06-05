@@ -33,6 +33,8 @@ class QuizPresenter {
                 let rightAnswer = AnswerViewModel(value: quote.author, isCorrect: true)
                 let wrongAnswer = AnswerViewModel(value: self.characters.first(where: { $0.name != quote.author })!.name, isCorrect: false)
                 let viewModel = QuizViewModel(question: "How said that: \(quote.quote)?", image: "", answers: [rightAnswer, wrongAnswer])
+                
+                self.view?.displayQuiz(viewModel: viewModel)
             case .failure:
                 print("error")
             }
